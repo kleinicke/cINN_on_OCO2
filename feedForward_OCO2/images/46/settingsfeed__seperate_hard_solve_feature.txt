@@ -1,0 +1,478 @@
+==========================================================================================
+Data Config options:
+
+  adam_betas               	(0.9, 0.999)
+  ana_names                	['xco2', 'tcwv', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'longitude', 'latitude']
+  arbitrary_number         	5
+  batch_size               	1024
+  blockTestData            	True
+  checkpoint_save_interval 	5
+  checkpoint_save_overwrite	False
+  co2_pos                  	0
+  configuration            	feed__seperate_hard_solve
+  dataloader               	<module 'data.dataloader' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/dataloader.py'>
+  dc                       	<module 'data.data_config' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/data_config.py'>
+  decay_by                 	0.005
+  device                   	cuda
+  do_rev                   	False
+  element_names            	['L2_id', 'xco2', 'albedo_o2', 'albedo_sco2', 'albedo_wco2', 'tcwv', 'aod_bc', 'aod_dust', 'aod_ice', 'aod_oc', 'aod_seasalt', 'aod_sulfate', 'aod_total', 'aod_water', 't700', 'psurf', 'windspeed', 'sza', 'latitude', 'longitude', 'year', 'month', 'day', 'sensor_zenith_angle', 'snr_wco2', 'snr_sco2', 'snr_o2a', 'glint_angle', 'altitude', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'L1_id', 'sco2', 'wco2', 'o2']
+  evaluation_samples       	1024
+  feature_net_file         	output/featureNet_5.pt
+  feature_net_name         	seperate_hard_solve
+  filename                 	output/co2INN5.pt1
+  fn_dropout               	0.2
+  fn_pretrain_log_interval 	10
+  fn_pretrain_number_of_tests	1
+  fn_pretrain_percentage   	11
+  l2_weight_reg            	1e-05
+  latent_noise             	1.0
+  live_visualization       	True
+  load_checkpoit           	0
+  load_file                	
+  load_model               	False
+  longer                   	False
+  loss_names               	['L_Train', 'L_Test']
+  losses                   	[]
+  lr_init                  	0.0015
+  lr_reduce_factor         	0.05
+  lr_reducer               	3
+  main_file                	feed_forward_net
+  model                    	seperate_hard_solve(
+  (cnn): Sequential(
+    (0): Conv1d(3, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (16): LeakyReLU(negative_slope=True)
+    (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (19): LeakyReLU(negative_slope=True)
+    (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (22): LeakyReLU(negative_slope=True)
+    (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (25): LeakyReLU(negative_slope=True)
+    (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (spec_solver): Sequential(
+    (0): Linear(in_features=2540, out_features=2048, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=2048, out_features=1024, bias=True)
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Linear(in_features=1024, out_features=1024, bias=True)
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Linear(in_features=1024, out_features=256, bias=True)
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (param_solver): Sequential(
+    (0): Linear(in_features=18, out_features=1024, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Linear(in_features=1024, out_features=1024, bias=True)
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Linear(in_features=1024, out_features=1024, bias=True)
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (15): Linear(in_features=1024, out_features=1024, bias=True)
+    (16): LeakyReLU(negative_slope=True)
+    (17): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (18): Linear(in_features=1024, out_features=1024, bias=True)
+    (19): LeakyReLU(negative_slope=True)
+    (20): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (21): Linear(in_features=1024, out_features=1024, bias=True)
+    (22): LeakyReLU(negative_slope=True)
+    (23): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Linear(in_features=1024, out_features=256, bias=True)
+    (25): LeakyReLU(negative_slope=True)
+  )
+  (combi): Sequential(
+    (0): Linear(in_features=512, out_features=512, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=512, out_features=512, bias=True)
+    (4): LeakyReLU(negative_slope=0.01)
+    (5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=512, out_features=512, bias=True)
+    (7): LeakyReLU(negative_slope=0.01)
+    (8): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (last_small): Sequential(
+    (0): Linear(in_features=512, out_features=256, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=256, out_features=10, bias=True)
+  )
+)
+  mu                       	[0.8885337696125644]
+  n_epochs                 	11
+  n_its_per_epoch          	1024
+  nets                     	<module 'nets' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/nets.py'>
+  np                       	<module 'numpy' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/numpy/__init__.py'>
+  number_of_spectra        	3
+  os                       	<module 'os' from '/home/florian/anaconda3/envs/e37/lib/python3.7/os.py'>
+  param_names              	['xco2' 'albedo_o2' 'albedo_sco2' 'albedo_wco2' 'tcwv']
+  params_in_spectrum       	18
+  params_mask              	[False False False  True  True  True  True False  True False False False
+ False False False False False]
+  pre_low_lr               	1
+  predict_uncert           	True
+  prepare_data             	<module 'data.prepare_data' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/prepare_data.py'>
+  preview_upscale          	3
+  progress_bar             	True
+  run_name                 	feature
+  save_new_fn              	True
+  sigma                    	[-0.25981062313812847]
+  solver                   	['old', 'identity', 'super', 'cnn_solve', 'cnn_long_solve', 'easy', 'cnn_sep_solve', 'Easy_solve', 'Harder_solve', 'Cnn_add_sep_solve']
+  solver2                  	['seperate_hard_solve', 'Cnn_long_combined_solve', 'fully_connected', 'FullyConnectedBig', 'Cnn_long_sep', 'Cnn_short_solve', 'Seperate_easy_solve', 'old_seperate_hard_solve']
+  spec_delete              	[5]
+  spec_length              	1016
+  start_featurenet_train   	-1
+  stop_train_loss          	1e+30
+  test_ana_loader          	<torch.utils.data.dataloader.DataLoader object at 0x7f8399511750>
+  torch                    	<module 'torch' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/torch/__init__.py'>
+  train_ana_loader         	<torch.utils.data.dataloader.DataLoader object at 0x7f839925a110>
+  train_uncert             	True
+  update_fn_params         	True
+  x_dim                    	5
+  y_dim_features           	512
+  y_dim_in                 	3066
+  year_sets                	{'2014': (tensor([[-1.3817,  0.3129,  0.7083,  0.3231, -0.9594],
+        [-2.1863,  0.7942, -0.0379,  0.1480,  0.3754],
+        [-1.3146,  1.3226,  1.0628,  1.4800, -0.4723],
+        ...,
+        [-2.1705, -0.9755, -0.5182, -0.7771, -0.7728],
+        [-1.9826, -1.1143, -0.3294, -0.7420,  0.3753],
+        [-1.2065, -0.5893, -0.3635, -0.2670, -0.8234]]), tensor([[ 0.3004,  0.2410,  0.2526,  ...,  0.3395,  0.4924,  0.3552],
+        [-0.1862,  1.0461, -0.3525,  ...,  0.8999, -1.8336,  0.2446],
+        [ 0.2955, -0.1205,  0.7751,  ...,  0.5619, -0.2487, -0.2138],
+        ...,
+        [-0.4345,  0.9082,  0.5036,  ..., -0.6366,  1.0296,  0.6241],
+        [-0.3783, -0.4201, -0.6630,  ..., -0.4450, -0.8248, -2.0090],
+        [ 0.0423,  1.4372,  0.5197,  ...,  1.5990,  0.9097, -0.0612]])), '2015': (tensor([[-1.4323, -0.4939, -0.5974, -0.1898, -0.5147],
+        [-0.9715, -0.0845,  0.3544,  0.1972, -0.7190],
+        [-0.6938,  1.6946,  1.7042,  1.6628, -0.7684],
+        ...,
+        [-2.1444, -1.2073, -1.0516, -1.0192, -0.1485],
+        [-0.6686, -1.5943, -1.3419, -1.6132, -0.6339],
+        [-0.9899,  2.2204,  2.1553,  2.0899, -0.6151]]), tensor([[ 1.7928, -0.1370,  2.3228,  ...,  0.9829, -0.8715, -1.7305],
+        [ 1.0123, -0.6240,  0.3159,  ...,  0.2646,  0.6058,  0.2009],
+        [-0.3219, -0.1648, -0.4026,  ..., -0.3229, -0.6029,  0.0736],
+        ...,
+        [ 0.0780,  1.2158,  1.8854,  ...,  0.2570,  1.4136,  1.4338],
+        [ 0.0624,  1.1741, -0.1832,  ..., -0.8897, -1.5961,  1.0392],
+        [-0.0364,  0.4124,  0.4998,  ...,  0.5169,  0.0306, -0.0539]])), '2016': (tensor([[-0.8923, -0.8115, -0.9501, -0.9213, -1.1115],
+        [-0.3794, -0.8475, -0.1350, -0.0856, -1.3478],
+        [-0.4569, -0.0885,  0.1257, -0.1880, -0.6875],
+        ...,
+        [ 0.2379,  1.4623,  1.3899,  1.3027,  1.3446],
+        [ 0.3834, -0.8101, -0.3588, -0.5822,  0.2196],
+        [-1.0118,  0.5572,  0.7665,  0.6245,  0.3744]]), tensor([[-0.6374, -0.4430,  1.0425,  ...,  0.8098, -1.1214, -2.7258],
+        [ 0.2129,  0.4266,  0.2045,  ...,  0.1751, -1.3662, -0.0787],
+        [-0.0890,  1.0041,  0.3892,  ..., -2.2841, -1.3150, -3.2147],
+        ...,
+        [ 0.0125,  0.7029, -0.8116,  ...,  0.1043,  0.3790,  0.1453],
+        [-0.0986,  0.6748,  0.9543,  ...,  1.3259,  0.7639,  0.0832],
+        [-0.6648, -0.8018, -1.0568,  ...,  0.3131,  0.5416,  0.8020]])), '2017': (tensor([[ 0.1448,  1.2324,  1.3245,  1.2378, -0.7744],
+        [-0.0839,  0.2572, -0.0927,  0.0524,  2.7914],
+        [-0.6019, -0.4247, -0.9886, -0.7965,  0.8369],
+        ...,
+        [ 0.0680, -0.5776, -0.5680, -0.5231, -0.1484],
+        [ 0.2910,  0.0440, -0.6705, -0.4812, -0.2103],
+        [-0.0094, -0.4803,  0.3629, -0.0658, -0.8681]]), tensor([[ 0.2155, -0.0241, -0.1666,  ...,  0.2981, -0.6007,  0.0104],
+        [ 0.0268, -0.3190, -0.4449,  ..., -0.5826,  0.1724, -1.6168],
+        [-0.7346, -0.0180, -0.1416,  ..., -0.5154,  0.2499, -1.7773],
+        ...,
+        [ 0.4843,  1.9897,  0.2745,  ...,  0.5921, -0.2525,  0.3912],
+        [ 0.5797,  0.3127, -0.8229,  ...,  0.1178,  0.8221,  1.0463],
+        [-0.3192, -0.4538, -0.3935,  ...,  1.2696,  0.7990,  0.3691]])), '2018': (tensor([[ 0.8999,  2.1179,  1.9536,  1.9452, -0.6094],
+        [ 0.2920,  0.0858,  0.8760,  0.6936, -0.6187],
+        [ 1.1412,  2.1303,  2.2095,  1.9493, -0.3699],
+        ...,
+        [ 0.1317,  0.9746,  1.0777,  1.0346, -1.2146],
+        [ 1.7517, -1.6169, -1.0248, -1.0004, -0.4644],
+        [ 0.2453,  1.1577,  1.3031,  1.0726, -0.4198]]), tensor([[-0.0038,  0.3884, -0.0414,  ...,  0.1576,  0.2354,  0.0681],
+        [ 0.0899, -0.3348, -0.8789,  ..., -0.4276,  0.9301,  0.9378],
+        [-0.1452, -0.1234,  0.2354,  ..., -0.4730, -0.6392,  0.1518],
+        ...,
+        [ 0.6705, -0.6089,  0.0478,  ..., -0.6488,  1.2876,  0.6445],
+        [-1.9944, -0.4440, -1.2309,  ..., -1.3020,  1.3733,  1.5599],
+        [-0.2509,  0.2132,  0.0822,  ...,  0.3735, -0.5334,  0.1622]])), '2019': (tensor([[ 1.8060, -1.3978, -0.7064, -0.8923, -1.0518],
+        [ 0.8078,  0.1952,  0.7947,  0.4239, -0.9011],
+        [ 1.4999,  2.0780,  1.6174,  1.8124, -0.9131],
+        ...,
+        [ 1.6692,  0.3811,  0.5769,  0.3416, -0.9433],
+        [ 1.0630, -0.7682, -1.3248, -1.3425, -0.6082],
+        [ 2.0974,  0.4005,  0.6095,  0.3709,  1.6675]]), tensor([[ 0.3863,  0.1952, -0.9818,  ...,  0.2326,  0.8373,  1.0252],
+        [-0.0588,  0.0483, -0.3708,  ...,  0.2976,  1.3301, -1.8706],
+        [-0.0386,  0.8387, -0.2011,  ..., -0.8631, -0.4285,  0.1585],
+        ...,
+        [-0.4347,  0.3066, -0.1653,  ..., -2.2849, -0.1005, -0.0170],
+        [ 2.2010, -1.4782, -0.8973,  ...,  1.3759,  1.0383, -0.3298],
+        [ 0.7201,  0.9572,  0.3502,  ...,  0.7642,  0.0847,  0.1397]]))}
+
+==========================================================================================
+Config options:
+
+  adam_betas               	(0.9, 0.999)
+  ana_names                	['xco2', 'tcwv', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'longitude', 'latitude']
+  arbitrary_number         	5
+  batch_size               	1024
+  blockTestData            	True
+  checkpoint_save_interval 	5
+  checkpoint_save_overwrite	False
+  co2_pos                  	0
+  configuration            	feed__seperate_hard_solve
+  dataloader               	<module 'data.dataloader' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/dataloader.py'>
+  dc                       	<module 'data.data_config' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/data_config.py'>
+  decay_by                 	0.005
+  device                   	cuda
+  do_rev                   	False
+  element_names            	['L2_id', 'xco2', 'albedo_o2', 'albedo_sco2', 'albedo_wco2', 'tcwv', 'aod_bc', 'aod_dust', 'aod_ice', 'aod_oc', 'aod_seasalt', 'aod_sulfate', 'aod_total', 'aod_water', 't700', 'psurf', 'windspeed', 'sza', 'latitude', 'longitude', 'year', 'month', 'day', 'sensor_zenith_angle', 'snr_wco2', 'snr_sco2', 'snr_o2a', 'glint_angle', 'altitude', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'L1_id', 'sco2', 'wco2', 'o2']
+  evaluation_samples       	1024
+  feature_net_file         	output/featureNet_5.pt
+  feature_net_name         	seperate_hard_solve
+  filename                 	output/co2INN5.pt1
+  fn_dropout               	0.2
+  fn_pretrain_log_interval 	10
+  fn_pretrain_number_of_tests	1
+  fn_pretrain_percentage   	11
+  l2_weight_reg            	1e-05
+  latent_noise             	1.0
+  live_visualization       	True
+  load_checkpoit           	0
+  load_file                	
+  load_model               	False
+  longer                   	False
+  loss_names               	['L_Train', 'L_Test']
+  losses                   	[]
+  lr_init                  	0.0015
+  lr_reduce_factor         	0.05
+  lr_reducer               	3
+  main_file                	feed_forward_net
+  model                    	seperate_hard_solve(
+  (cnn): Sequential(
+    (0): Conv1d(3, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (16): LeakyReLU(negative_slope=True)
+    (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (19): LeakyReLU(negative_slope=True)
+    (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+    (22): LeakyReLU(negative_slope=True)
+    (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+    (25): LeakyReLU(negative_slope=True)
+    (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (spec_solver): Sequential(
+    (0): Linear(in_features=2540, out_features=2048, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=2048, out_features=1024, bias=True)
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Linear(in_features=1024, out_features=1024, bias=True)
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Linear(in_features=1024, out_features=256, bias=True)
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (param_solver): Sequential(
+    (0): Linear(in_features=18, out_features=1024, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=1024, out_features=1024, bias=True)
+    (4): LeakyReLU(negative_slope=True)
+    (5): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=1024, out_features=1024, bias=True)
+    (7): LeakyReLU(negative_slope=True)
+    (8): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): Linear(in_features=1024, out_features=1024, bias=True)
+    (10): LeakyReLU(negative_slope=True)
+    (11): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Linear(in_features=1024, out_features=1024, bias=True)
+    (13): LeakyReLU(negative_slope=True)
+    (14): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (15): Linear(in_features=1024, out_features=1024, bias=True)
+    (16): LeakyReLU(negative_slope=True)
+    (17): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (18): Linear(in_features=1024, out_features=1024, bias=True)
+    (19): LeakyReLU(negative_slope=True)
+    (20): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (21): Linear(in_features=1024, out_features=1024, bias=True)
+    (22): LeakyReLU(negative_slope=True)
+    (23): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Linear(in_features=1024, out_features=256, bias=True)
+    (25): LeakyReLU(negative_slope=True)
+  )
+  (combi): Sequential(
+    (0): Linear(in_features=512, out_features=512, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=512, out_features=512, bias=True)
+    (4): LeakyReLU(negative_slope=0.01)
+    (5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): Linear(in_features=512, out_features=512, bias=True)
+    (7): LeakyReLU(negative_slope=0.01)
+    (8): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (last_small): Sequential(
+    (0): Linear(in_features=512, out_features=256, bias=True)
+    (1): LeakyReLU(negative_slope=True)
+    (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Linear(in_features=256, out_features=10, bias=True)
+  )
+)
+  mu                       	[0.8885337696125644]
+  n_epochs                 	11
+  n_its_per_epoch          	1024
+  nets                     	<module 'nets' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/nets.py'>
+  np                       	<module 'numpy' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/numpy/__init__.py'>
+  number_of_spectra        	3
+  os                       	<module 'os' from '/home/florian/anaconda3/envs/e37/lib/python3.7/os.py'>
+  param_names              	['xco2' 'albedo_o2' 'albedo_sco2' 'albedo_wco2' 'tcwv']
+  params_in_spectrum       	18
+  params_mask              	[False False False  True  True  True  True False  True False False False
+ False False False False False]
+  pre_low_lr               	1
+  predict_uncert           	True
+  prepare_data             	<module 'data.prepare_data' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_tests/data/prepare_data.py'>
+  preview_upscale          	3
+  progress_bar             	True
+  run_name                 	feature
+  save_new_fn              	True
+  sigma                    	[-0.25981062313812847]
+  solver                   	['old', 'identity', 'super', 'cnn_solve', 'cnn_long_solve', 'easy', 'cnn_sep_solve', 'Easy_solve', 'Harder_solve', 'Cnn_add_sep_solve']
+  solver2                  	['seperate_hard_solve', 'Cnn_long_combined_solve', 'fully_connected', 'FullyConnectedBig', 'Cnn_long_sep', 'Cnn_short_solve', 'Seperate_easy_solve', 'old_seperate_hard_solve']
+  spec_delete              	[5]
+  spec_length              	1016
+  start_featurenet_train   	-1
+  stop_train_loss          	1e+30
+  test_ana_loader          	<torch.utils.data.dataloader.DataLoader object at 0x7f8399511750>
+  torch                    	<module 'torch' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/torch/__init__.py'>
+  train_ana_loader         	<torch.utils.data.dataloader.DataLoader object at 0x7f839925a110>
+  train_uncert             	True
+  update_fn_params         	True
+  x_dim                    	5
+  y_dim_features           	512
+  y_dim_in                 	3066
+  year_sets                	{'2014': (tensor([[-1.3817,  0.3129,  0.7083,  0.3231, -0.9594],
+        [-2.1863,  0.7942, -0.0379,  0.1480,  0.3754],
+        [-1.3146,  1.3226,  1.0628,  1.4800, -0.4723],
+        ...,
+        [-2.1705, -0.9755, -0.5182, -0.7771, -0.7728],
+        [-1.9826, -1.1143, -0.3294, -0.7420,  0.3753],
+        [-1.2065, -0.5893, -0.3635, -0.2670, -0.8234]]), tensor([[ 0.3004,  0.2410,  0.2526,  ...,  0.3395,  0.4924,  0.3552],
+        [-0.1862,  1.0461, -0.3525,  ...,  0.8999, -1.8336,  0.2446],
+        [ 0.2955, -0.1205,  0.7751,  ...,  0.5619, -0.2487, -0.2138],
+        ...,
+        [-0.4345,  0.9082,  0.5036,  ..., -0.6366,  1.0296,  0.6241],
+        [-0.3783, -0.4201, -0.6630,  ..., -0.4450, -0.8248, -2.0090],
+        [ 0.0423,  1.4372,  0.5197,  ...,  1.5990,  0.9097, -0.0612]])), '2015': (tensor([[-1.4323, -0.4939, -0.5974, -0.1898, -0.5147],
+        [-0.9715, -0.0845,  0.3544,  0.1972, -0.7190],
+        [-0.6938,  1.6946,  1.7042,  1.6628, -0.7684],
+        ...,
+        [-2.1444, -1.2073, -1.0516, -1.0192, -0.1485],
+        [-0.6686, -1.5943, -1.3419, -1.6132, -0.6339],
+        [-0.9899,  2.2204,  2.1553,  2.0899, -0.6151]]), tensor([[ 1.7928, -0.1370,  2.3228,  ...,  0.9829, -0.8715, -1.7305],
+        [ 1.0123, -0.6240,  0.3159,  ...,  0.2646,  0.6058,  0.2009],
+        [-0.3219, -0.1648, -0.4026,  ..., -0.3229, -0.6029,  0.0736],
+        ...,
+        [ 0.0780,  1.2158,  1.8854,  ...,  0.2570,  1.4136,  1.4338],
+        [ 0.0624,  1.1741, -0.1832,  ..., -0.8897, -1.5961,  1.0392],
+        [-0.0364,  0.4124,  0.4998,  ...,  0.5169,  0.0306, -0.0539]])), '2016': (tensor([[-0.8923, -0.8115, -0.9501, -0.9213, -1.1115],
+        [-0.3794, -0.8475, -0.1350, -0.0856, -1.3478],
+        [-0.4569, -0.0885,  0.1257, -0.1880, -0.6875],
+        ...,
+        [ 0.2379,  1.4623,  1.3899,  1.3027,  1.3446],
+        [ 0.3834, -0.8101, -0.3588, -0.5822,  0.2196],
+        [-1.0118,  0.5572,  0.7665,  0.6245,  0.3744]]), tensor([[-0.6374, -0.4430,  1.0425,  ...,  0.8098, -1.1214, -2.7258],
+        [ 0.2129,  0.4266,  0.2045,  ...,  0.1751, -1.3662, -0.0787],
+        [-0.0890,  1.0041,  0.3892,  ..., -2.2841, -1.3150, -3.2147],
+        ...,
+        [ 0.0125,  0.7029, -0.8116,  ...,  0.1043,  0.3790,  0.1453],
+        [-0.0986,  0.6748,  0.9543,  ...,  1.3259,  0.7639,  0.0832],
+        [-0.6648, -0.8018, -1.0568,  ...,  0.3131,  0.5416,  0.8020]])), '2017': (tensor([[ 0.1448,  1.2324,  1.3245,  1.2378, -0.7744],
+        [-0.0839,  0.2572, -0.0927,  0.0524,  2.7914],
+        [-0.6019, -0.4247, -0.9886, -0.7965,  0.8369],
+        ...,
+        [ 0.0680, -0.5776, -0.5680, -0.5231, -0.1484],
+        [ 0.2910,  0.0440, -0.6705, -0.4812, -0.2103],
+        [-0.0094, -0.4803,  0.3629, -0.0658, -0.8681]]), tensor([[ 0.2155, -0.0241, -0.1666,  ...,  0.2981, -0.6007,  0.0104],
+        [ 0.0268, -0.3190, -0.4449,  ..., -0.5826,  0.1724, -1.6168],
+        [-0.7346, -0.0180, -0.1416,  ..., -0.5154,  0.2499, -1.7773],
+        ...,
+        [ 0.4843,  1.9897,  0.2745,  ...,  0.5921, -0.2525,  0.3912],
+        [ 0.5797,  0.3127, -0.8229,  ...,  0.1178,  0.8221,  1.0463],
+        [-0.3192, -0.4538, -0.3935,  ...,  1.2696,  0.7990,  0.3691]])), '2018': (tensor([[ 0.8999,  2.1179,  1.9536,  1.9452, -0.6094],
+        [ 0.2920,  0.0858,  0.8760,  0.6936, -0.6187],
+        [ 1.1412,  2.1303,  2.2095,  1.9493, -0.3699],
+        ...,
+        [ 0.1317,  0.9746,  1.0777,  1.0346, -1.2146],
+        [ 1.7517, -1.6169, -1.0248, -1.0004, -0.4644],
+        [ 0.2453,  1.1577,  1.3031,  1.0726, -0.4198]]), tensor([[-0.0038,  0.3884, -0.0414,  ...,  0.1576,  0.2354,  0.0681],
+        [ 0.0899, -0.3348, -0.8789,  ..., -0.4276,  0.9301,  0.9378],
+        [-0.1452, -0.1234,  0.2354,  ..., -0.4730, -0.6392,  0.1518],
+        ...,
+        [ 0.6705, -0.6089,  0.0478,  ..., -0.6488,  1.2876,  0.6445],
+        [-1.9944, -0.4440, -1.2309,  ..., -1.3020,  1.3733,  1.5599],
+        [-0.2509,  0.2132,  0.0822,  ...,  0.3735, -0.5334,  0.1622]])), '2019': (tensor([[ 1.8060, -1.3978, -0.7064, -0.8923, -1.0518],
+        [ 0.8078,  0.1952,  0.7947,  0.4239, -0.9011],
+        [ 1.4999,  2.0780,  1.6174,  1.8124, -0.9131],
+        ...,
+        [ 1.6692,  0.3811,  0.5769,  0.3416, -0.9433],
+        [ 1.0630, -0.7682, -1.3248, -1.3425, -0.6082],
+        [ 2.0974,  0.4005,  0.6095,  0.3709,  1.6675]]), tensor([[ 0.3863,  0.1952, -0.9818,  ...,  0.2326,  0.8373,  1.0252],
+        [-0.0588,  0.0483, -0.3708,  ...,  0.2976,  1.3301, -1.8706],
+        [-0.0386,  0.8387, -0.2011,  ..., -0.8631, -0.4285,  0.1585],
+        ...,
+        [-0.4347,  0.3066, -0.1653,  ..., -2.2849, -0.1005, -0.0170],
+        [ 2.2010, -1.4782, -0.8973,  ...,  1.3759,  1.0383, -0.3298],
+        [ 0.7201,  0.9572,  0.3502,  ...,  0.7642,  0.0847,  0.1397]]))}
+==========================================================================================

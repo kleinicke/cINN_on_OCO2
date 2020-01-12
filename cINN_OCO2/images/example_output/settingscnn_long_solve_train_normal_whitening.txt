@@ -1,0 +1,1004 @@
+==========================================================================================
+Data Config options:
+
+  N_post                   	512
+  adam_betas               	(0.9, 0.999)
+  additionally_trained_feature_net	True
+  ana_names                	['xco2', 'tcwv', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'longitude', 'latitude']
+  arbitrary_number         	4
+  batch_size               	1024
+  blockTestData            	True
+  checkpoint_save_interval 	30
+  checkpoint_save_overwrite	False
+  co2_pos                  	0
+  configuration            	cnn_long_solve_train
+  dataloader               	<module 'data.dataloader' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/dataloader.py'>
+  dc                       	<module 'data.data_config' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/data_config.py'>
+  decay_by                 	0.005
+  device                   	cuda
+  do_rev                   	False
+  element_names            	['L2_id', 'xco2', 'albedo_o2', 'albedo_sco2', 'albedo_wco2', 'tcwv', 'aod_bc', 'aod_dust', 'aod_ice', 'aod_oc', 'aod_seasalt', 'aod_sulfate', 'aod_total', 'aod_water', 't700', 'psurf', 'windspeed', 'sza', 'latitude', 'longitude', 'year', 'month', 'day', 'sensor_zenith_angle', 'snr_wco2', 'snr_sco2', 'snr_o2a', 'glint_angle', 'altitude', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'L1_id', 'sco2', 'wco2', 'o2']
+  evaluation_samples       	1000
+  exponent_clamping        	1.0
+  fc_dropout               	0.0
+  feature_net_name         	cnn_long_solve
+  file_it                  	1
+  filename                 	output/co2INN4.pt1
+  fn_dropout               	0.2
+  init_scale               	0.0375
+  internal_width           	256
+  l2_weight_reg            	1e-05
+  latent_noise             	1.0
+  live_visualization       	True
+  load_file                	
+  losses                   	[]
+  lr_init                  	0.0001
+  lr_reduce_factor         	0.2
+  main_file                	train
+  model                    	CINN(
+  (cinn): ReversibleGraphNet(
+    (module_list): ModuleList(
+      (0): None
+      (1): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (2): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (3): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (4): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (5): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (6): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (7): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (8): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (9): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (10): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (11): dummy()
+      (12): None
+      (13): None
+      (14): None
+      (15): None
+      (16): None
+      (17): None
+      (18): None
+      (19): None
+      (20): None
+      (21): None
+    )
+  )
+  (cond_net): CondNet(
+    (subCondNets): ModuleList(
+      (0): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (1): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (2): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (3): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (4): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (5): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (6): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (7): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (8): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (9): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+    )
+    (bigCondNet): Cnn_long_solve(
+      (cnn2): Sequential(
+        (0): Conv1d(3, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (4): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): LeakyReLU(negative_slope=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (19): LeakyReLU(negative_slope=True)
+        (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (22): LeakyReLU(negative_slope=True)
+        (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (24): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (25): LeakyReLU(negative_slope=True)
+        (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (27): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (28): LeakyReLU(negative_slope=True)
+        (29): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (cnn3): Sequential(
+        (0): Conv1d(1, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (4): LeakyReLU(negative_slope=True)
+        (5): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (cnn): Sequential(
+        (0): Conv1d(1, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (4): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): LeakyReLU(negative_slope=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (19): LeakyReLU(negative_slope=True)
+        (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (22): LeakyReLU(negative_slope=True)
+        (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (24): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (25): LeakyReLU(negative_slope=True)
+        (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (27): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (28): LeakyReLU(negative_slope=True)
+        (29): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (30): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (31): LeakyReLU(negative_slope=True)
+        (32): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (33): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (34): LeakyReLU(negative_slope=True)
+        (35): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (36): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (37): LeakyReLU(negative_slope=True)
+        (38): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (39): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (40): LeakyReLU(negative_slope=True)
+        (41): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (42): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (43): LeakyReLU(negative_slope=True)
+        (44): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (45): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (46): LeakyReLU(negative_slope=True)
+        (47): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (48): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (49): LeakyReLU(negative_slope=True)
+        (50): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (51): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (52): LeakyReLU(negative_slope=True)
+        (53): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (smaller): Sequential(
+        (0): Linear(in_features=1938, out_features=1024, bias=True)
+        (1): LeakyReLU(negative_slope=True)
+        (2): Linear(in_features=1024, out_features=512, bias=True)
+        (3): LeakyReLU(negative_slope=True)
+      )
+      (linear): Sequential(
+        (0): Linear(in_features=512, out_features=2048, bias=True)
+        (1): Dropout(p=0.2, inplace=False)
+        (2): Linear(in_features=2048, out_features=512, bias=True)
+        (3): Linear(in_features=512, out_features=1024, bias=True)
+        (4): LeakyReLU(negative_slope=True)
+        (5): Dropout(p=0.2, inplace=False)
+        (6): Linear(in_features=1024, out_features=1024, bias=True)
+        (7): Dropout(p=0.2, inplace=False)
+        (8): Linear(in_features=1024, out_features=1024, bias=True)
+        (9): Dropout(p=0.2, inplace=False)
+        (10): Linear(in_features=1024, out_features=167, bias=True)
+      )
+      (fc_final): Linear(in_features=167, out_features=5, bias=True)
+    )
+  )
+)
+  mu                       	[0.9686955714654313]
+  n_blocks                 	10
+  n_epochs                 	11
+  n_its_per_epoch          	1024
+  np                       	<module 'numpy' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/numpy/__init__.py'>
+  os                       	<module 'os' from '/home/florian/anaconda3/envs/e37/lib/python3.7/os.py'>
+  param_names              	['xco2' 'albedo_o2' 'albedo_sco2' 'albedo_wco2' 'tcwv']
+  params_in_spectrum       	18
+  params_mask              	[False False False  True  True  True  True False  True False False False
+ False False False False False]
+  pre_low_lr               	1
+  prepare_data             	<module 'data.prepare_data' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/prepare_data.py'>
+  progress_bar             	True
+  re                       	<module 're' from '/home/florian/anaconda3/envs/e37/lib/python3.7/re.py'>
+  run_name                 	normal_whitening
+  sigma                    	[-0.1412526689286561]
+  skip_large               	False
+  solver                   	['old', 'identity', 'super', 'cnn_solve', 'cnn_long_solve', 'easy', 'cnn_sep_solve', 'Easy_solve', 'Harder_solve', 'Cnn_add_sep_solve']
+  solver1                  	['seperate_hard_solve', 'Cnn_long_combined_solve', 'fully_connected', 'FullyConnectedBig', 'Cnn_long_sep', 'Cnn_short_solve', 'PriorNet']
+  spec_delete              	[-9]
+  spec_length              	1016
+  stop_train_loss          	10000000000.0
+  test_ana_loader          	<torch.utils.data.dataloader.DataLoader object at 0x7f046b72f850>
+  torch                    	<module 'torch' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/torch/__init__.py'>
+  train_ana_loader         	<torch.utils.data.dataloader.DataLoader object at 0x7f046b640350>
+  use_permutation          	True
+  x_dim                    	5
+  y_dim_features           	128
+  y_dim_in                 	3065
+  year_sets                	{'2014': (tensor([[-1.4650, -0.5013,  0.1971, -0.0039, -1.2644],
+        [-1.9494,  0.5686,  0.8340,  0.5312,  0.5698],
+        [-2.2017,  0.6966,  0.7715,  0.5511, -0.4411],
+        ...,
+        [-2.1355,  0.4346, -1.0241, -0.7225,  1.9164],
+        [-1.2641, -0.7675, -0.3592, -0.2423, -0.6684],
+        [-1.6676,  1.6038,  1.3668,  1.6106, -0.2210]]), tensor([[ 0.2181,  0.2404, -0.7946,  ..., -2.1000,  1.4142,  0.4023],
+        [ 0.4319, -0.6753,  0.3061,  ...,  1.0816,  0.4038,  0.7698],
+        [-0.1064, -0.5376, -0.4350,  ..., -0.1837,  0.4213,  0.8213],
+        ...,
+        [ 1.0838,  0.8634,  2.1038,  ...,  0.9067, -1.5788, -0.0143],
+        [ 1.4290,  0.0630, -0.2696,  ...,  0.9663, -1.5083,  0.2237],
+        [ 0.5800,  0.3796,  0.1673,  ..., -1.7301, -0.2874,  0.3052]])), '2015': (tensor([[-1.1812, -0.5546, -0.8985, -0.8817,  0.2727],
+        [-1.5217, -0.0299,  0.7607,  0.2895, -0.9175],
+        [-1.2013,  0.4630, -0.0360,  0.1875,  3.1183],
+        ...,
+        [-1.8273, -0.1640, -1.1325, -1.1018,  1.1434],
+        [-1.8741, -0.1662,  0.3739,  0.5464, -0.4163],
+        [-0.5513, -1.0666, -1.0486, -1.2989,  2.4182]]), tensor([[-0.2391,  0.4098, -0.3705,  ..., -0.3343,  0.3026, -1.6500],
+        [ 0.3375, -0.3363, -0.1313,  ...,  0.8544, -1.1964, -1.5394],
+        [ 0.2250, -1.4462, -0.6380,  ..., -0.7252,  0.0560, -0.3969],
+        ...,
+        [ 1.6503, -1.6001, -1.1019,  ...,  1.0520, -1.3671,  0.6537],
+        [ 0.0061,  0.6546, -0.1158,  ..., -0.5962,  1.3137,  1.0166],
+        [-1.9842, -0.7337,  2.8260,  ...,  0.5007,  1.1632, -0.1698]])), '2016': (tensor([[-8.3982e-01, -1.0481e+00, -2.5808e-01, -3.6798e-01, -7.7698e-01],
+        [-1.0198e+00, -1.3264e+00, -4.1738e-01, -4.8910e-01,  2.1107e-01],
+        [-6.9449e-01,  1.2118e+00, -5.0269e-01, -3.1188e-01,  5.4215e-01],
+        ...,
+        [ 7.6962e-04, -1.0785e+00, -9.8151e-01, -1.1472e+00, -5.8501e-01],
+        [-4.2867e-01,  2.1201e+00,  1.8230e+00,  1.9876e+00, -1.0946e+00],
+        [-8.9954e-01, -1.4241e+00, -3.6468e-01, -4.9208e-01, -2.2453e-01]]), tensor([[ 0.6707, -0.6455, -0.4545,  ..., -0.5706,  0.8202,  0.8429],
+        [ 0.7791, -1.0089, -1.1120,  ...,  0.5415,  0.3003,  0.9409],
+        [-2.3745, -3.3077, -2.8166,  ..., -0.9856,  0.0698,  0.8148],
+        ...,
+        [ 0.3225, -0.8525,  0.8003,  ...,  2.4248,  0.9034, -0.0816],
+        [ 0.0220,  0.2794, -0.5031,  ..., -2.1894,  0.1711,  0.2196],
+        [ 0.8475,  0.6441, -0.5537,  ...,  0.3745,  1.7480, -2.3807]])), '2017': (tensor([[ 0.6368, -1.2298, -0.9274, -0.9920,  0.2207],
+        [ 0.6167, -0.2481,  0.6153,  0.2838, -1.1165],
+        [-0.3866,  1.4612, -0.7698, -0.3436,  0.4400],
+        ...,
+        [ 0.4991, -0.0458,  0.2703,  0.1120, -0.3211],
+        [-0.8313,  0.5888, -0.9074, -0.5066,  0.8962],
+        [-0.8110, -0.8922, -1.2902, -1.3375,  0.4014]]), tensor([[ 2.0854,  1.9288,  4.5017,  ..., -0.9348,  0.1694,  1.0374],
+        [-0.6294,  0.2675, -0.1194,  ..., -1.2785,  0.4566,  0.6873],
+        [-1.5993, -0.4440,  2.4931,  ..., -0.1584, -1.0635, -2.3957],
+        ...,
+        [ 0.0990,  0.4242,  0.0292,  ..., -0.9549,  0.5242,  0.7545],
+        [-0.3512, -0.4736, -0.7900,  ..., -0.3985, -1.0057, -2.5602],
+        [ 0.2671, -0.6644,  1.3873,  ..., -0.0629, -1.2057,  1.0716]])), '2018': (tensor([[ 0.9454, -0.3756,  0.5546,  0.2377, -1.2386],
+        [ 0.4514,  0.1476, -1.0803, -1.0506,  0.9155],
+        [ 1.2383,  0.2299,  0.4791,  0.0956, -0.1677],
+        ...,
+        [ 0.1071, -0.2385, -1.3837, -1.4339,  0.3682],
+        [ 0.4876,  1.4313,  2.0120,  2.0013, -1.0339],
+        [ 0.8120, -0.7711, -0.0236, -0.1706, -0.1451]]), tensor([[-0.6119,  0.0264,  0.1529,  ...,  0.2291,  0.7137,  0.1560],
+        [ 0.8392, -0.6656,  0.6651,  ..., -0.7634,  0.2691,  0.6567],
+        [ 0.2601, -0.4114,  0.5275,  ...,  1.9011,  0.5121,  0.5089],
+        ...,
+        [ 1.0546, -1.0833,  0.2279,  ...,  0.8164,  0.5855,  1.1956],
+        [ 0.1302, -0.2592,  0.7019,  ...,  0.6126, -0.2458, -0.1244],
+        [-1.4292, -0.1738, -0.5386,  ...,  1.1092, -1.4805,  0.1549]])), '2019': (tensor([[ 0.3151, -0.6972, -1.1708, -1.1904,  0.0729],
+        [ 2.3435,  1.4657,  1.3536,  1.1503,  0.0607],
+        [ 0.3549, -0.7859,  0.1934, -0.0312,  0.1590],
+        ...,
+        [ 0.4123, -0.0610, -1.2660, -1.2623, -0.7659],
+        [ 1.8013, -2.1664, -1.0905, -1.2753, -0.6475],
+        [ 1.0708,  2.3895,  2.2427,  2.2846, -0.8170]]), tensor([[ 0.4468,  0.6381, -0.1897,  ..., -1.0950,  1.5648,  0.9846],
+        [ 0.1128, -0.4512,  0.3115,  ..., -0.0839,  0.0086,  0.1391],
+        [-0.2805, -0.3602, -1.3230,  ...,  0.3197,  1.5951, -1.8146],
+        ...,
+        [-2.0778, -1.3765, -2.8899,  ...,  0.7955, -1.5326,  0.5835],
+        [ 0.0314,  0.6099, -1.4706,  ..., -0.8038,  0.1146,  0.8610],
+        [-0.0681,  0.7996, -0.4888,  ..., -0.6575,  0.1851,  0.2599]]))}
+
+==========================================================================================
+Config options:
+
+  N_post                   	512
+  adam_betas               	(0.9, 0.999)
+  additionally_trained_feature_net	True
+  ana_names                	['xco2', 'tcwv', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'longitude', 'latitude']
+  arbitrary_number         	4
+  batch_size               	1024
+  blockTestData            	True
+  checkpoint_save_interval 	30
+  checkpoint_save_overwrite	False
+  co2_pos                  	0
+  configuration            	cnn_long_solve_train
+  dataloader               	<module 'data.dataloader' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/dataloader.py'>
+  dc                       	<module 'data.data_config' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/data_config.py'>
+  decay_by                 	0.005
+  device                   	cuda
+  do_rev                   	False
+  element_names            	['L2_id', 'xco2', 'albedo_o2', 'albedo_sco2', 'albedo_wco2', 'tcwv', 'aod_bc', 'aod_dust', 'aod_ice', 'aod_oc', 'aod_seasalt', 'aod_sulfate', 'aod_total', 'aod_water', 't700', 'psurf', 'windspeed', 'sza', 'latitude', 'longitude', 'year', 'month', 'day', 'sensor_zenith_angle', 'snr_wco2', 'snr_sco2', 'snr_o2a', 'glint_angle', 'altitude', 'tcwv_apriori', 'tcwv_uncertainty', 'xco2_apriori', 'xco2_uncertainty', 'xco2_raw', 'xco2_averaging_kernel', 'L1_id', 'sco2', 'wco2', 'o2']
+  evaluation_samples       	1000
+  exponent_clamping        	1.0
+  fc_dropout               	0.0
+  feature_net_name         	cnn_long_solve
+  file_it                  	1
+  filename                 	output/co2INN4.pt1
+  fn_dropout               	0.2
+  init_scale               	0.0375
+  internal_width           	256
+  l2_weight_reg            	1e-05
+  latent_noise             	1.0
+  live_visualization       	True
+  load_file                	
+  losses                   	[]
+  lr_init                  	0.0001
+  lr_reduce_factor         	0.2
+  main_file                	train
+  model                    	CINN(
+  (cinn): ReversibleGraphNet(
+    (module_list): ModuleList(
+      (0): None
+      (1): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (2): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (3): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (4): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (5): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (6): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (7): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (8): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (9): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (10): GLOWCouplingBlock(
+        (s1): Sequential(
+          (0): Linear(in_features=130, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=6, bias=True)
+        )
+        (s2): Sequential(
+          (0): Linear(in_features=131, out_features=256, bias=True)
+          (1): LeakyReLU(negative_slope=0.01)
+          (2): Linear(in_features=256, out_features=256, bias=True)
+          (3): LeakyReLU(negative_slope=0.01)
+          (4): Linear(in_features=256, out_features=4, bias=True)
+        )
+      )
+      (11): dummy()
+      (12): None
+      (13): None
+      (14): None
+      (15): None
+      (16): None
+      (17): None
+      (18): None
+      (19): None
+      (20): None
+      (21): None
+    )
+  )
+  (cond_net): CondNet(
+    (subCondNets): ModuleList(
+      (0): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (1): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (2): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (3): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (4): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (5): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (6): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (7): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (8): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+      (9): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=512, out_features=128, bias=True)
+      )
+    )
+    (bigCondNet): Cnn_long_solve(
+      (cnn2): Sequential(
+        (0): Conv1d(3, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (4): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): LeakyReLU(negative_slope=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (19): LeakyReLU(negative_slope=True)
+        (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (22): LeakyReLU(negative_slope=True)
+        (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (24): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (25): LeakyReLU(negative_slope=True)
+        (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (27): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (28): LeakyReLU(negative_slope=True)
+        (29): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (cnn3): Sequential(
+        (0): Conv1d(1, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (4): LeakyReLU(negative_slope=True)
+        (5): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (cnn): Sequential(
+        (0): Conv1d(1, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (1): LeakyReLU(negative_slope=True)
+        (2): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (4): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): LeakyReLU(negative_slope=True)
+        (6): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (7): LeakyReLU(negative_slope=True)
+        (8): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (9): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (10): LeakyReLU(negative_slope=True)
+        (11): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (12): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (13): LeakyReLU(negative_slope=True)
+        (14): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (15): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (16): LeakyReLU(negative_slope=True)
+        (17): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (18): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (19): LeakyReLU(negative_slope=True)
+        (20): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (21): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (22): LeakyReLU(negative_slope=True)
+        (23): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (24): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (25): LeakyReLU(negative_slope=True)
+        (26): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (27): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (28): LeakyReLU(negative_slope=True)
+        (29): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (30): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (31): LeakyReLU(negative_slope=True)
+        (32): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (33): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (34): LeakyReLU(negative_slope=True)
+        (35): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (36): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (37): LeakyReLU(negative_slope=True)
+        (38): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (39): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (40): LeakyReLU(negative_slope=True)
+        (41): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (42): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (43): LeakyReLU(negative_slope=True)
+        (44): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (45): Conv1d(20, 20, kernel_size=(3,), stride=(2,), padding=(1,))
+        (46): LeakyReLU(negative_slope=True)
+        (47): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (48): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (49): LeakyReLU(negative_slope=True)
+        (50): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (51): Conv1d(20, 20, kernel_size=(3,), stride=(1,), padding=(1,))
+        (52): LeakyReLU(negative_slope=True)
+        (53): BatchNorm1d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (smaller): Sequential(
+        (0): Linear(in_features=1938, out_features=1024, bias=True)
+        (1): LeakyReLU(negative_slope=True)
+        (2): Linear(in_features=1024, out_features=512, bias=True)
+        (3): LeakyReLU(negative_slope=True)
+      )
+      (linear): Sequential(
+        (0): Linear(in_features=512, out_features=2048, bias=True)
+        (1): Dropout(p=0.2, inplace=False)
+        (2): Linear(in_features=2048, out_features=512, bias=True)
+        (3): Linear(in_features=512, out_features=1024, bias=True)
+        (4): LeakyReLU(negative_slope=True)
+        (5): Dropout(p=0.2, inplace=False)
+        (6): Linear(in_features=1024, out_features=1024, bias=True)
+        (7): Dropout(p=0.2, inplace=False)
+        (8): Linear(in_features=1024, out_features=1024, bias=True)
+        (9): Dropout(p=0.2, inplace=False)
+        (10): Linear(in_features=1024, out_features=167, bias=True)
+      )
+      (fc_final): Linear(in_features=167, out_features=5, bias=True)
+    )
+  )
+)
+  mu                       	[0.9686955714654313]
+  n_blocks                 	10
+  n_epochs                 	11
+  n_its_per_epoch          	1024
+  np                       	<module 'numpy' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/numpy/__init__.py'>
+  os                       	<module 'os' from '/home/florian/anaconda3/envs/e37/lib/python3.7/os.py'>
+  param_names              	['xco2' 'albedo_o2' 'albedo_sco2' 'albedo_wco2' 'tcwv']
+  params_in_spectrum       	18
+  params_mask              	[False False False  True  True  True  True False  True False False False
+ False False False False False]
+  pre_low_lr               	1
+  prepare_data             	<module 'data.prepare_data' from '/home/florian/Desktop/invertible_NNs/experiments/nasa_data/data/prepare_data.py'>
+  progress_bar             	True
+  re                       	<module 're' from '/home/florian/anaconda3/envs/e37/lib/python3.7/re.py'>
+  run_name                 	normal_whitening
+  sigma                    	[-0.1412526689286561]
+  skip_large               	False
+  solver                   	['old', 'identity', 'super', 'cnn_solve', 'cnn_long_solve', 'easy', 'cnn_sep_solve', 'Easy_solve', 'Harder_solve', 'Cnn_add_sep_solve']
+  solver1                  	['seperate_hard_solve', 'Cnn_long_combined_solve', 'fully_connected', 'FullyConnectedBig', 'Cnn_long_sep', 'Cnn_short_solve', 'PriorNet']
+  spec_delete              	[-9]
+  spec_length              	1016
+  stop_train_loss          	10000000000.0
+  test_ana_loader          	<torch.utils.data.dataloader.DataLoader object at 0x7f046b72f850>
+  torch                    	<module 'torch' from '/home/florian/anaconda3/envs/e37/lib/python3.7/site-packages/torch/__init__.py'>
+  train_ana_loader         	<torch.utils.data.dataloader.DataLoader object at 0x7f046b640350>
+  use_permutation          	True
+  x_dim                    	5
+  y_dim_features           	128
+  y_dim_in                 	3065
+  year_sets                	{'2014': (tensor([[-1.4650, -0.5013,  0.1971, -0.0039, -1.2644],
+        [-1.9494,  0.5686,  0.8340,  0.5312,  0.5698],
+        [-2.2017,  0.6966,  0.7715,  0.5511, -0.4411],
+        ...,
+        [-2.1355,  0.4346, -1.0241, -0.7225,  1.9164],
+        [-1.2641, -0.7675, -0.3592, -0.2423, -0.6684],
+        [-1.6676,  1.6038,  1.3668,  1.6106, -0.2210]]), tensor([[ 0.2181,  0.2404, -0.7946,  ..., -2.1000,  1.4142,  0.4023],
+        [ 0.4319, -0.6753,  0.3061,  ...,  1.0816,  0.4038,  0.7698],
+        [-0.1064, -0.5376, -0.4350,  ..., -0.1837,  0.4213,  0.8213],
+        ...,
+        [ 1.0838,  0.8634,  2.1038,  ...,  0.9067, -1.5788, -0.0143],
+        [ 1.4290,  0.0630, -0.2696,  ...,  0.9663, -1.5083,  0.2237],
+        [ 0.5800,  0.3796,  0.1673,  ..., -1.7301, -0.2874,  0.3052]])), '2015': (tensor([[-1.1812, -0.5546, -0.8985, -0.8817,  0.2727],
+        [-1.5217, -0.0299,  0.7607,  0.2895, -0.9175],
+        [-1.2013,  0.4630, -0.0360,  0.1875,  3.1183],
+        ...,
+        [-1.8273, -0.1640, -1.1325, -1.1018,  1.1434],
+        [-1.8741, -0.1662,  0.3739,  0.5464, -0.4163],
+        [-0.5513, -1.0666, -1.0486, -1.2989,  2.4182]]), tensor([[-0.2391,  0.4098, -0.3705,  ..., -0.3343,  0.3026, -1.6500],
+        [ 0.3375, -0.3363, -0.1313,  ...,  0.8544, -1.1964, -1.5394],
+        [ 0.2250, -1.4462, -0.6380,  ..., -0.7252,  0.0560, -0.3969],
+        ...,
+        [ 1.6503, -1.6001, -1.1019,  ...,  1.0520, -1.3671,  0.6537],
+        [ 0.0061,  0.6546, -0.1158,  ..., -0.5962,  1.3137,  1.0166],
+        [-1.9842, -0.7337,  2.8260,  ...,  0.5007,  1.1632, -0.1698]])), '2016': (tensor([[-8.3982e-01, -1.0481e+00, -2.5808e-01, -3.6798e-01, -7.7698e-01],
+        [-1.0198e+00, -1.3264e+00, -4.1738e-01, -4.8910e-01,  2.1107e-01],
+        [-6.9449e-01,  1.2118e+00, -5.0269e-01, -3.1188e-01,  5.4215e-01],
+        ...,
+        [ 7.6962e-04, -1.0785e+00, -9.8151e-01, -1.1472e+00, -5.8501e-01],
+        [-4.2867e-01,  2.1201e+00,  1.8230e+00,  1.9876e+00, -1.0946e+00],
+        [-8.9954e-01, -1.4241e+00, -3.6468e-01, -4.9208e-01, -2.2453e-01]]), tensor([[ 0.6707, -0.6455, -0.4545,  ..., -0.5706,  0.8202,  0.8429],
+        [ 0.7791, -1.0089, -1.1120,  ...,  0.5415,  0.3003,  0.9409],
+        [-2.3745, -3.3077, -2.8166,  ..., -0.9856,  0.0698,  0.8148],
+        ...,
+        [ 0.3225, -0.8525,  0.8003,  ...,  2.4248,  0.9034, -0.0816],
+        [ 0.0220,  0.2794, -0.5031,  ..., -2.1894,  0.1711,  0.2196],
+        [ 0.8475,  0.6441, -0.5537,  ...,  0.3745,  1.7480, -2.3807]])), '2017': (tensor([[ 0.6368, -1.2298, -0.9274, -0.9920,  0.2207],
+        [ 0.6167, -0.2481,  0.6153,  0.2838, -1.1165],
+        [-0.3866,  1.4612, -0.7698, -0.3436,  0.4400],
+        ...,
+        [ 0.4991, -0.0458,  0.2703,  0.1120, -0.3211],
+        [-0.8313,  0.5888, -0.9074, -0.5066,  0.8962],
+        [-0.8110, -0.8922, -1.2902, -1.3375,  0.4014]]), tensor([[ 2.0854,  1.9288,  4.5017,  ..., -0.9348,  0.1694,  1.0374],
+        [-0.6294,  0.2675, -0.1194,  ..., -1.2785,  0.4566,  0.6873],
+        [-1.5993, -0.4440,  2.4931,  ..., -0.1584, -1.0635, -2.3957],
+        ...,
+        [ 0.0990,  0.4242,  0.0292,  ..., -0.9549,  0.5242,  0.7545],
+        [-0.3512, -0.4736, -0.7900,  ..., -0.3985, -1.0057, -2.5602],
+        [ 0.2671, -0.6644,  1.3873,  ..., -0.0629, -1.2057,  1.0716]])), '2018': (tensor([[ 0.9454, -0.3756,  0.5546,  0.2377, -1.2386],
+        [ 0.4514,  0.1476, -1.0803, -1.0506,  0.9155],
+        [ 1.2383,  0.2299,  0.4791,  0.0956, -0.1677],
+        ...,
+        [ 0.1071, -0.2385, -1.3837, -1.4339,  0.3682],
+        [ 0.4876,  1.4313,  2.0120,  2.0013, -1.0339],
+        [ 0.8120, -0.7711, -0.0236, -0.1706, -0.1451]]), tensor([[-0.6119,  0.0264,  0.1529,  ...,  0.2291,  0.7137,  0.1560],
+        [ 0.8392, -0.6656,  0.6651,  ..., -0.7634,  0.2691,  0.6567],
+        [ 0.2601, -0.4114,  0.5275,  ...,  1.9011,  0.5121,  0.5089],
+        ...,
+        [ 1.0546, -1.0833,  0.2279,  ...,  0.8164,  0.5855,  1.1956],
+        [ 0.1302, -0.2592,  0.7019,  ...,  0.6126, -0.2458, -0.1244],
+        [-1.4292, -0.1738, -0.5386,  ...,  1.1092, -1.4805,  0.1549]])), '2019': (tensor([[ 0.3151, -0.6972, -1.1708, -1.1904,  0.0729],
+        [ 2.3435,  1.4657,  1.3536,  1.1503,  0.0607],
+        [ 0.3549, -0.7859,  0.1934, -0.0312,  0.1590],
+        ...,
+        [ 0.4123, -0.0610, -1.2660, -1.2623, -0.7659],
+        [ 1.8013, -2.1664, -1.0905, -1.2753, -0.6475],
+        [ 1.0708,  2.3895,  2.2427,  2.2846, -0.8170]]), tensor([[ 0.4468,  0.6381, -0.1897,  ..., -1.0950,  1.5648,  0.9846],
+        [ 0.1128, -0.4512,  0.3115,  ..., -0.0839,  0.0086,  0.1391],
+        [-0.2805, -0.3602, -1.3230,  ...,  0.3197,  1.5951, -1.8146],
+        ...,
+        [-2.0778, -1.3765, -2.8899,  ...,  0.7955, -1.5326,  0.5835],
+        [ 0.0314,  0.6099, -1.4706,  ..., -0.8038,  0.1146,  0.8610],
+        [-0.0681,  0.7996, -0.4888,  ..., -0.6575,  0.1851,  0.2599]]))}
+==========================================================================================

@@ -1,0 +1,8 @@
+*.npy
+*.out
+*.png
+*.pt*
+*.vscode
+*h5
+*nc4
+*DS_Store*
